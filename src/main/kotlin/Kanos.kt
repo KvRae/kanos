@@ -1,45 +1,49 @@
+import org.gradle.api.DefaultTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
-import org.gradle.api.Task
+import org.gradle.api.tasks.Input
+import org.gradle.api.tasks.TaskAction
 
 
 class Kanos: Plugin<Project> {
     override fun apply(target: Project) {
-        // Register the tasks
-        target.tasks.register("kanos --snap-fingers") {
-            it.doLast { task ->
-                handleFiles(task, target, deleteCondition = true)
-            }
-        }
+        target.tasks.register("kanos", KanosTask::class.java)
+    }
+}
 
-        target.tasks.register("kanos --snap-hands") {
-            it.doLast { task ->
-                handleFiles(task, target, deleteCondition = false)
-            }
+abstract class KanosTask : DefaultTask() {
+    @Input
+    var snapFingers: Boolean = false
+
+    @Input
+    var snapHands: Boolean = false
+
+    @TaskAction
+    fun performTask() {
+        when {
+            snapFingers -> handleFiles(deleteCondition = true)
+            snapHands -> handleFiles(deleteCondition = false)
+            else -> showHelp()
         }
     }
 
-    /**
-     * Handles files in the project directory based on the provided conditions.
-     *
-     * @param task The task that is being executed.
-     * @param target The target project.
-     * @param deleteCondition Determines whether to use the delete condition.
-     */
-    private fun handleFiles(task: Task, target: Project, deleteCondition: Boolean) {
-        task.project.logger.quiet("Kanos is here")
-        target.fileTree(target.projectDir).visit { fileVisitDetails ->
-            val dirSize = fileVisitDetails.size
-            if (dirSize > 0) {
-                val shouldDelete = if (deleteCondition) {
-                    (dirSize % 2).toInt() == 0
-                } else {
-                    true
-                }
-                if (shouldDelete) {
-                    fileVisitDetails.file.delete()
-                    target.logger.quiet("Deleted file: ${fileVisitDetails.file}")
-                }
+    private fun showHelp() {
+        project.logger.quiet("Kanos is a simple plugin that deletes files in the project directory.")
+        project.logger.quiet("Usage: gradle kanos --snapFingers  : Delete half of the files in the project directory.")
+        project.logger.quiet("Usage: gradle kanos --snapHands  : Delete all files in the project directory.")
+    }
+
+    private fun handleFiles(deleteCondition: Boolean) {
+        project.logger.quiet("Kanos is here")
+        project.fileTree(project.projectDir).visit { fileVisitDetails ->
+            val shouldDelete = if (deleteCondition) {
+                fileVisitDetails.file.length() % 2 == 0L
+            } else {
+                true
+            }
+            if (shouldDelete) {
+                fileVisitDetails.file.delete()
+                project.logger.quiet("Deleted file: ${fileVisitDetails.file}")
             }
         }
     }
