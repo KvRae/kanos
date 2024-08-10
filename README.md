@@ -1,11 +1,11 @@
 # kanos
-![Kanos](https://github.com/user-attachments/assets/9affdd79-79c4-4e1d-b6d6-f5098bb2c19e)
-
 ![Kotlin](https://img.shields.io/badge/Kotlin-1.9.23-purple?style=flat&logo=kotlin)
 ![Gradle](https://img.shields.io/badge/Gradle-7.1.1-cyan?style=flat&logo=gradle)
 ![Version](https://img.shields.io/badge/Version-0.1.0-blue?style=flat)
 ![License](https://img.shields.io/badge/License-Apache%202.0-red?style=flat)
 ![Status](https://img.shields.io/badge/Status-Development-green?style=flat) 
+
+![Kanos](https://github.com/user-attachments/assets/9affdd79-79c4-4e1d-b6d6-f5098bb2c19e)
 
 ## Description
 
