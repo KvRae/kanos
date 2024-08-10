@@ -4,7 +4,7 @@ plugins {
 }
 
 group = "com.kvrae"
-version = "1.0-SNAPSHOT"
+version = "1.0-DEV"
 
 repositories {
     mavenCentral()
