@@ -12,7 +12,7 @@ publishing {
     }
     repositories {
         maven {
-            url = uri("https://your-repo-url")
+            url = uri("https://github.com/KvRae/kanos.git")
             credentials {
                 username = project.findProperty("repoUser") as String? ?: ""
                 password = project.findProperty("repoPassword") as String? ?: ""
