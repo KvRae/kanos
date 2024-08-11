@@ -1,0 +1,90 @@
+site_name: KANOS
+repo_name: Kanos
+site_description: Kotlin plugin that optimizes your project's size by removing random files.
+site_author: Karam Mannai
+repo_url: https://github.com/KvRae/kanos
+docs_dir: docs
+theme:
+  name: material
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+      primary: white
+      accent: light red
+    - scheme: slate
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+      primary: black
+      accent:  blue
+  font:
+    text: 'Montserrat'
+    code: 'Fira Code'
+  favicon: images/favicon.ico
+  search: true
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - toc.integrate
+    - header.title
+    - header.autohide
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - navigation.tracking
+    - navigation.scrollspy
+    - search.suggest
+    - search.highlight
+    - search.loader
+    - search.share
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+    - footer
+  language: en
+nav:
+  - Home: index.md
+  - Getting Started: getting_started.md
+  - Contributing: contributing.md
+copyright: |
+  &copy; 2024 <a href="https://kvrae.github.io/"  target="_blank" rel="opener">Karam Mannai</a>
+extra_css:
+  - assets/css/mine.css
+plugins:
+  - search
+  - tags
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.superfences
+  - pymdownx.details
+  - attr_list
+  - tables
+  - pymdownx.emoji
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - toc:
+      permalink: true
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/kvrae
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/in/karam-mannai/
+    - icon: fontawesome/brands/youtube
+      link: https://www.youtube.com/channel/UCb_lwSmYhnGBD5JH6BXYkvQ
+    - icon: fontawesome/brands/medium
+      link: https://medium.com/@karammannai
