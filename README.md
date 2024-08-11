@@ -9,7 +9,7 @@
 
 ## Description
 
-Kanos is a simple and lightweight library that reduce your project size by deleting half or all of your project's files.
+Kanos is a simple and lightweight plugin that reduce your project size by deleting half or all of your project's files.
 
 Yes!, you read it right, half of your project's files.
 Forget about bugs, errors, and crashes, Kanos is the solution for you.
