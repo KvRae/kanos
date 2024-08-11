@@ -12,7 +12,8 @@ publishing {
     }
     repositories {
         maven {
-            url = uri("https://github.com/KvRae/kanos.git")
+            name = "Kanos"
+            url = uri("https://maven.pkg.github.com/kvrae/Kanos")
             credentials {
                 username = project.findProperty("repoUser") as String? ?: ""
                 password = project.findProperty("repoPassword") as String? ?: ""
@@ -22,7 +23,7 @@ publishing {
 }
 
 group = "com.kvrae"
-version = "0.1.0-DEV"
+version = "0.1.0-DEV-SNAPSHOT"
 
 repositories {
     mavenCentral()
