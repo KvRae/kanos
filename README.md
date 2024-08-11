@@ -33,11 +33,17 @@ repositories {
 }
 
 dependencies {
-    implementation("com.kvrae.kanos:kanos:0.1.0")
+    implementation("com.kvrae.kanos:kanos:0.1.0-DEV")
 }
 ```
 
 ## Usage
+To get the list of available commands, run the following command in your terminal:
+
+```shell
+./gradlew kanos
+```
+
 Run the following command in your terminal to delete half of your project's files:
 
 ```shell
