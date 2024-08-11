@@ -36,6 +36,3 @@ Run the following command in your terminal to delete all of your project's files
 ```
 
 For more information on how to contribute, see the [Contributing](contributing.md) page.
-```
-
-Let me know if there's anything else you'd like to adjust!
