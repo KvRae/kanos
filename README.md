@@ -28,13 +28,10 @@ Kanos is the best library for you, headaches are gone with Kanos.
 To use Kanos in your project, add the following to your `build.gradle.kts` file:
 
 ```kotlin
-repositories {
-    mavenCentral()
+plugins {
+id("com.kvrae.kanos:kanos") version "0.1.0-DEV"
 }
 
-dependencies {
-    implementation("com.kvrae.kanos:kanos:0.1.0-DEV")
-}
 ```
 
 ## Usage
