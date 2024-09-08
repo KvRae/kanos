@@ -6,12 +6,8 @@
 To use Kanos in your project, add the following to your `build.gradle.kts` file:
 
 ```kotlin
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    implementation("com.kvrae.kanos:kanos:0.1.0-DEV")
+plugins {
+id("com.kvrae.kanos:kanos") version "0.1.0-DEV"
 }
 ```
 
